@@ -41,6 +41,8 @@ public class InputManager : MonoBehaviour
                     Debug.LogAssertion("El input ingresado no está registrado.");
                     return false;
             }
+            bool debugValue = continuous ? Input.GetButton(action) : Input.GetButtonDown(action);
+            Debug.Log($"{action}, { debugValue}");
             return continuous ? Input.GetButton(action) : Input.GetButtonDown(action);
         }
 
@@ -69,10 +71,10 @@ public class InputManager : MonoBehaviour
     }
     private void Update()
     {
-        foreach(Player player in _players)
+        for(int i=0; i< _players.Length; i++)
         {
-            player.CheckJoystick();
-            player.CheckButtons();
+            _players[i].CheckJoystick();
+            _players[i].CheckButtons();
         }
     }
     public void TestInput(Vector2 input)
@@ -81,6 +83,6 @@ public class InputManager : MonoBehaviour
     }
     public void TestInput(bool input)
     {
-        if(_canDebug) Debug.Log(input);
+        if(_canDebug) Debug.Log($"{input}");
     }
 }
