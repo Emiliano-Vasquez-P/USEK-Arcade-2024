@@ -250,10 +250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textMesh: {fileID: 1067948482}
   _textDelay: 0.05
-  _textFile: {fileID: 4900000, guid: 96be30baab847774a97d72aab0a2a9c2, type: 3}
-  _fullText: "asdsdsdsdsdsdsd sd sds dsd sd s.> dsds dsdsdsjhdjshd jahfkjsdf khnsdlvhj
-    wlijcnalkj alkjsdhn akljsd klajhfljs dialjd asjdj.> skjd ajd a\xF1odsj al\xF1ksdjk
-    ajlksdj aslkjd alkdnalkclakjsca scanljc nakjckaca"
+  _textFile: {fileID: 4900000, guid: 5b80be49452cd7045b0e0b934fa18631, type: 3}
+  _fullText: 
   _lineSeparator: '>'
 --- !u!1 &1067948481
 GameObject:

@@ -673,8 +673,121 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 84, y: 100.1}
+  m_SizeDelta: {x: 84, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1193347898
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4288529593118159221, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_Name
+      value: Input Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._readAxisAsDiscrete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._readAxisAsDiscrete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1406597370}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1406597370}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MoveIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MoveIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Arcade.ArcadeMenu, Arcade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Arcade.ArcadeMenu, Arcade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[0]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608620937405434734, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: _players.Array.data[1]._joystickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957019486287598368, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b941e687d277e44f9936a0ecc7bc55b, type: 3}
 --- !u!1 &1406597369
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,8 +825,8 @@ MonoBehaviour:
     GameDisplayName: Game 1
     GameThumbnail: {fileID: 0}
   - GameID: GME2
-    GameDisplayName: Game 2
-    GameThumbnail: {fileID: 0}
+    GameDisplayName: Batalla Espacial
+    GameThumbnail: {fileID: 21300000, guid: 24085e2b123ac5a48acf97cf023934bf, type: 3}
   _highlightCardColor: {r: 0.518, g: 0.87632275, b: 0.8962264, a: 1}
   _gameCard:
   - {fileID: 1793002764}
@@ -1127,3 +1240,4 @@ SceneRoots:
   - {fileID: 357925243394106739}
   - {fileID: 1406597374}
   - {fileID: 735170730}
+  - {fileID: 1193347898}

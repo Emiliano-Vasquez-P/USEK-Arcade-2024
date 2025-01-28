@@ -32,15 +32,21 @@ namespace Arcade
         private Image[] _gameCardImages;
         [SerializeField]
         private Image[] _gameThumbnailImage;
-        private Sprite[] _gameThumbnails;
         private Color _defaultCardColor;
         private float horizontalInput;
 
-        void LoadGamesThumbnails()
-        {
-            foreach(ArcadeGameInfo gameInfo in _gamesInfo)
-            {
+        private bool neutralJoystick = true;
 
+        void LoadGamesThumbnails()
+        {            
+            if (_gamesInfo.Length <= 0)
+            {
+                Debug.LogError("No games listed");
+                return;
+            }
+            for(int i = 0; i < _gamesInfo.Length;i++){
+                ArcadeGameInfo gameInfo = _gamesInfo[i];
+                _gameThumbnailImage[i].sprite = gameInfo.GameThumbnail;
             }
         }
 
@@ -65,7 +71,7 @@ namespace Arcade
 
         }
 
-        //Cargar el menú del juego seleccionado
+        //Cargar el menï¿½ del juego seleccionado
         void StartGame()
         {
             if (_gamesInfo.Length <= 0)
@@ -77,9 +83,17 @@ namespace Arcade
             GameSceneManager.StartGame();
         }
 
-        void MoveIndex(int a)
+        public void MoveIndex(Vector2 input)
         {
+            int a = 0;
+            if(input.x > 0)
+                a = 1;
+            else if (input.x < 0)
+                a = -1;
+
             _index += a;
+            if(_index < 0)
+                _index = _gamesInfo.Length-1;
             _index %= _gamesInfo.Length;
             for(int i = 0; i < _gameCardImages.Length; i++)
             {
@@ -94,18 +108,12 @@ namespace Arcade
         {
             _defaultCardColor = _gameCardImages[0].color;
             ShowGamesList();
+            LoadGamesThumbnails();
         }
 
         private void Update()
         {
-            horizontalInput = Input.GetAxis("Horizontal");
-            if (horizontalInput >= 0.1f || horizontalInput <= -0.1f )
-            {
-                MoveIndex((int)Mathf.Sign(horizontalInput));
-                horizontalInput = 0;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("P1_Start") || Input.GetButtonDown("P2_Start"))
             {
                 StartGame();
             }

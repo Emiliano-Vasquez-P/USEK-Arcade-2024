@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Crosshair : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Crosshair : MonoBehaviour
     public Transform crosshair;
     public AudioSource source;
     public AudioClip clip;
+
 
     Collider2D currentEnemy;
 
@@ -18,7 +20,13 @@ public class Crosshair : MonoBehaviour
 
         Vector3 direction = new(x, y);
         direction.Normalize();
-        crosshair.position += speed * Time.deltaTime * direction;
+        Vector3 newPos = crosshair.position;
+        newPos += speed * Time.deltaTime * direction;
+
+        newPos.x = Mathf.Clamp(newPos.x,0,256);
+        newPos.y = Mathf.Clamp(newPos.y,0,144);
+
+        crosshair.position = newPos;
     }
 
     void OnTriggerEnter2D(Collider2D other)

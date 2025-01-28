@@ -18,6 +18,10 @@ public class InputManager : MonoBehaviour
         }
         [SerializeField] private ButtonEvent[] _buttonEvents;
         [SerializeField] private UnityEvent<Vector2> _joystickEvent;
+        [SerializeField] private bool _readAxisAsDiscrete; // 
+        private float _discreteAxisThreshold = 0.5f; //number between 0 and 1
+        private bool _pastThresholdHorizontal = false;
+        private bool _pastThresholdVertical = false;
         private string _playerPrefix;
         private Vector2 _joystick => new Vector2(Input.GetAxis(_playerPrefix + "Horizontal"), Input.GetAxis(_playerPrefix + "Vertical"));
 
@@ -57,11 +61,38 @@ public class InputManager : MonoBehaviour
 
         public void CheckJoystick()
         {
-            _joystickEvent?.Invoke(_joystick);
+            Vector2 joystickInput = _joystick;
+            if(_readAxisAsDiscrete){
+                if(!_pastThresholdHorizontal && Mathf.Abs(_joystick.x) > _discreteAxisThreshold){
+                    _pastThresholdHorizontal = true;
+                    joystickInput.x = Mathf.Sign(_joystick.x);
+                }
+                else if(Mathf.Abs(_joystick.x) > _discreteAxisThreshold){
+                    joystickInput.x = 0;
+                }
+                else{
+                    _pastThresholdHorizontal = false;
+                    joystickInput.x = 0;
+                }
+
+                if(!_pastThresholdVertical && Mathf.Abs(_joystick.y) > _discreteAxisThreshold){
+                    _pastThresholdVertical = true;
+                    joystickInput.y = Mathf.Sign(_joystick.y);
+                }
+                else if(Mathf.Abs(_joystick.y) > _discreteAxisThreshold){
+                    joystickInput.y = 0;
+                }
+                else{
+                    _pastThresholdVertical = false;
+                    joystickInput.y = 0;
+                }
+            }
+            _joystickEvent?.Invoke(joystickInput);
         }
     }
     [SerializeField] private bool _canDebug;
     [SerializeField] private Player[] _players;
+
     private void OnEnable()
     {
         for (int i = 0; i < _players.Length; i++)

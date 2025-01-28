@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 //Clase nativa para la correcta carga de escenas
 public class GameSceneManager
 {
-    //Método que carga una escena del juego actual. Los nombres de las esceneas siempre están en minúsculas
+    //Mï¿½todo que carga una escena del juego actual. Los nombres de las esceneas siempre estï¿½n en minï¿½sculas
     //Llamar escribiendo: GameSceneManager.LoadScene(nombreEscena)
     /* sceneName: nombre de la escena.
      *      Los nombres disponibles son: menu, level1, level2, boss, bonus1, bonus2, intro, gameOver, end
@@ -19,7 +19,7 @@ public class GameSceneManager
             SceneManager.LoadScene(sceneNameString);
     }
 
-    //Método que carga la escena de menú del juego actual
+    //Mï¿½todo que carga la escena de menï¿½ del juego actual
     //Llamar escribiendo: GameSceneManager.StartGame()
     public static void StartGame()
     {
@@ -47,7 +47,7 @@ public class GameSceneManager
     }
     
     
-    //Método que carga la siguiente escena del juego actual, cuando el jugador a superado una. En caso de ser la escena final, se regresa al menú
+    //Mï¿½todo que carga la siguiente escena del juego actual, cuando el jugador a superado una. En caso de ser la escena final, se regresa al menï¿½
     //Llamar escribiendo: GameSceneManager.NextLevel()
     public static void NextLevel()
     {
@@ -72,12 +72,14 @@ public class GameSceneManager
                 break;
             case "end": nextScene = "menu";
                 break;
+            case "gameOver": nextScene = "level1";
+                break;
         }
 
         LoadScene(nextScene);
     }
 
-    //Método que carga la escena de gameOver cuando el jugador pierde. Si se llama mientras se está en gameOver, se regresa al menú
+    //Mï¿½todo que carga la escena de gameOver cuando el jugador pierde. Si se llama mientras se estï¿½ en gameOver, se regresa al menï¿½
     //Llamar escribiendo: GameSceneManager.GameOver()
     public static void GameOver()
     {

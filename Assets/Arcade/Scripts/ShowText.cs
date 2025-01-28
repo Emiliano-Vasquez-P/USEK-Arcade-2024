@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-//Clase que muestra un texto párrafo por párrafo
+//Clase que muestra un texto pï¿½rrafo por pï¿½rrafo
 //Presionar cualquier tecla de ataque progresa el texto y cambia la escena al llegar al final
 //utilizar 1 solo archivo de texto por escena
 namespace Arcade
@@ -19,7 +19,7 @@ namespace Arcade
         [SerializeField]
         private float _textDelay;
 
-        //Archivo del texto que será reproducido en escena
+        //Archivo del texto que serï¿½ reproducido en escena
         [SerializeField]
         private TextAsset _textFile;
 
@@ -28,7 +28,7 @@ namespace Arcade
         [TextArea(7, 10)]
         private string _fullText;
 
-        //Cáracter que define la separación de párrafos
+        //Cï¿½racter que define la separaciï¿½n de pï¿½rrafos
         //Definir en cada escena por inspector
         //Se recomienda usar >
         [SerializeField]
@@ -38,19 +38,19 @@ namespace Arcade
         private int _lineIndex;
         private bool _showingTextLine;
 
-        //Método que divide el texto en párrafos
+        //Mï¿½todo que divide el texto en pï¿½rrafos
         void ParseText()
         {
             //En caso que se tenga asignado un archivo de texto, se utiliza ese en vez de lo escrito en el inspector
             if (_textFile != null)
                 _fullText = _textFile.text;
-            //El texto se separa en "párrafos" separados por el caracter separador
-            //El caracter separador NO se mostrará en pantalla
+            //El texto se separa en "pï¿½rrafos" separados por el caracter separador
+            //El caracter separador NO se mostrarï¿½ en pantalla
             _lines = _fullText.Split(_lineSeparator, System.StringSplitOptions.RemoveEmptyEntries);
             _lineIndex = 0;
         }
 
-        //Corrutina que muestra 1 párrafo de texto caracter por caracter hasta llegar al fin del párrafo
+        //Corrutina que muestra 1 pï¿½rrafo de texto caracter por caracter hasta llegar al fin del pï¿½rrafo
         //Modificar _textDelay para cambiar velocidad
         IEnumerator DisplayTextLine()
         {
@@ -70,7 +70,7 @@ namespace Arcade
             _showingTextLine = false;
         }
 
-        //Método que muestra inmediatamente el párrafo, sin la animación de la corrutina
+        //Mï¿½todo que muestra inmediatamente el pï¿½rrafo, sin la animaciï¿½n de la corrutina
         void ShowFullLine()
         {
             if (_showingTextLine)
@@ -82,9 +82,9 @@ namespace Arcade
         }
 
 
-        //Método que muestra el siguiente párrafo si ya se terminó de mostrar uno
-        //En caso contrario, llama ShowFullLine(), salta la animación del texto y muestra el párrafo inmediatamente
-        //En caso que sea la línea final, cambia de escena
+        //Mï¿½todo que muestra el siguiente pï¿½rrafo si ya se terminï¿½ de mostrar uno
+        //En caso contrario, llama ShowFullLine(), salta la animaciï¿½n del texto y muestra el pï¿½rrafo inmediatamente
+        //En caso que sea la lï¿½nea final, cambia de escena
         void ShowNextLine()
         {
             if (_lineIndex >= _lines.Length -1)
@@ -102,7 +102,7 @@ namespace Arcade
             }
         }
 
-        //Método que cambia a la siguiente escena en caso que se haya terminado de mostrar el´párrafo actual
+        //Mï¿½todo que cambia a la siguiente escena en caso que se haya terminado de mostrar elï¿½pï¿½rrafo actual
         void SkipToNextScene()
         {
             if (!_showingTextLine)
@@ -121,13 +121,16 @@ namespace Arcade
         }
         private void Start()
         {
-            StartCoroutine(DisplayTextLine());
+            if(_fullText.Length != 0)
+                StartCoroutine(DisplayTextLine());
+            else
+                GameSceneManager.NextLevel();
         }
 
 
         private void Update()
         {
-            if (Input.GetButtonDown("P1_Fire1") ||  Input.GetButtonDown("P2_Fire1") || Input.GetButtonDown("P1_Fire2") || Input.GetButtonDown("P2_Fire2"))
+            if (Input.GetButtonDown("P1_Start") || Input.GetButtonDown("P2_Start") || Input.GetButtonDown("P1_Fire1") ||  Input.GetButtonDown("P2_Fire1") || Input.GetButtonDown("P1_Fire2") || Input.GetButtonDown("P2_Fire2"))
             {
                 ShowNextLine();
             }

@@ -103,7 +103,7 @@ public class BossEnemy : MonoBehaviour, IDamageable
         canvasJuego.gameObject.SetActive(!gameObject.activeSelf);
         textoBossFight.text = textoFinal;
 
-        //GameSceneManager.NextLevel();
+        GameSceneManager.NextLevel();
     }
 
     public void ActivateShield()

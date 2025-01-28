@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        Debug.Log($"Took damage: {damage}. Remaining health: {currentHealth}");
+        //Debug.Log($"Took damage: {damage}. Remaining health: {currentHealth}");
 
         PlayerHealthBar healthBar = FindObjectOfType<PlayerHealthBar>();
         if (healthBar != null)
@@ -60,13 +60,13 @@ public class PlayerManager : MonoBehaviour
     {
         if (!isInvincible)
         {
-            Debug.Log("Player turned invincible");
+            //Debug.Log("Player turned invincible");
             isInvincible = true;
 
             yield return new WaitForSeconds(invincibilityDuration);
 
             isInvincible = false;
-            Debug.Log("Player no longer invincible");
+            //Debug.Log("Player no longer invincible");
         }
     }
 

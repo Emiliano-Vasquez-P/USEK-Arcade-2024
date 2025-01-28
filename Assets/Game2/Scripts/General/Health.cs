@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     {
         StartCoroutine(FlashRed());
         currentHealth -= damage;
-        Debug.Log("took damage:" + damage + ". remaining health:" + currentHealth);
+        //Debug.Log("took damage:" + damage + ". remaining health:" + currentHealth);
 
         if (currentHealth <= 0)
         {
